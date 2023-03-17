@@ -62,3 +62,21 @@ header input {
   padding: 0;
   margin: 0;
 }
+/* Add this to your existing styles.css file */
+
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 50%;
+}
+
+#search-button {
+  background-color: #4c4c4c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  margin-left: 1rem;
+  border-radius: 3px;
+}
+
