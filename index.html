@@ -50,8 +50,8 @@
         </ul>
       </section>
       <!-- Add the following button elements -->
-      <button id="button1">Button 1</button>
-      <button id="button2">Button 2</button>
+      <button id="button1">Add Recipe</button>
+      <button id="button2">Add Recipe Category</button>
     </main>
     <footer>
       <p>&copy; 2023 My Recipe Sharing Platform. All rights reserved.</p>
@@ -62,11 +62,17 @@
       const button2 = document.getElementById("button2");
 
       button1.addEventListener("click", function() {
-        alert("Button 1 clicked");
+        const featuredRecipes = document.querySelector(".featured-recipes");
+        const newRecipe = document.createElement("li");
+        newRecipe.innerHTML = "<img src='https://via.placeholder.com/300x200' alt='Recipe Image'><h3>New Recipe Title</h3>";
+        featuredRecipes.querySelector("ul").appendChild(newRecipe);
       });
 
       button2.addEventListener("click", function() {
-        alert("Button 2 clicked");
+        const browseRecipes = document.querySelector(".browse-recipes");
+        const newCategory = document.createElement("li");
+        newCategory.innerHTML = "<a href='#'>New Recipe Category</a>";
+        browseRecipes.querySelector("ul").appendChild(newCategory);
       });
     </script>
   </body>
