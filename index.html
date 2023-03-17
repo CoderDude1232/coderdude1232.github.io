@@ -1,28 +1,58 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Movie Streaming</title>
-</head>
-<body>
-  <header>
-    <h1>Movie Streaming</h1>
-    <div class="search-container">
-      <input type="text" id="search" placeholder="Search for movies...">
-      <button id="search-button">Enter</button>
-    </div>
-  </header>
-  <section id="movies">
-    <!-- Movie cards will be generated here -->
-  </section>
-  <section id="favorites">
-    <h2>My Favorites</h2>
-    <ul id="favorites-list">
-      <!-- Favorites will be listed here -->
-    </ul>
-  </section>
-  <script src="scripts.js"></script>
-</body>
+<html>
+  <head>
+    <title>Recipe Sharing Platform</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <h1>Recipe Sharing Platform</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">Browse</a></li>
+          <li><a href="#">Collections</a></li>
+          <li><a href="#">Upload</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section class="featured-recipes">
+        <h2>Featured Recipes</h2>
+        <ul>
+          <li>
+            <a href="#">
+              <img src="https://images.unsplash.com/photo-1610496817347-313e647788c2" alt="Pasta dish">
+              <h3>Pasta with Tomato Sauce</h3>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="https://images.unsplash.com/photo-1599013104139-2c0ed10aee29" alt="Vegetable salad">
+              <h3>Summer Vegetable Salad</h3>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="https://images.unsplash.com/photo-1595443372762-af01ac36a253" alt="Fruit smoothie">
+              <h3>Berry Banana Smoothie</h3>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <section class="browse-recipes">
+        <h2>Browse Recipes</h2>
+        <ul>
+          <li><a href="#">Appetizers</a></li>
+          <li><a href="#">Main Courses</a></li>
+          <li><a href="#">Desserts</a></li>
+          <li><a href="#">Drinks</a></li>
+        </ul>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2023 Recipe Sharing Platform</p>
+    </footer>
+    <script src="app.js"></script>
+  </body>
 </html>
