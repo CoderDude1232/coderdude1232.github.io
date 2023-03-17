@@ -44,3 +44,20 @@ search.addEventListener('input', (e) => {
 });
 
 displayMovies(movies);
+// Add this line after the existing event listeners
+document.getElementById('search-button').addEventListener('click', performSearch);
+
+// Wrap the existing search functionality in a new function
+function performSearch() {
+  const query = search.value;
+  const filteredMovies = filterMovies(query);
+  displayMovies(filteredMovies);
+}
+
+// Replace the existing event listener for 'input' with the following
+search.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    performSearch();
+  }
+});
+
