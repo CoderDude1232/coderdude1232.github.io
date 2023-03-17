@@ -1,25 +1,38 @@
+/* Reset */
 * {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
+/* Typography */
 body {
-  font-family: Arial, sans-serif;
-  margin: 0;
-  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
 }
 
+h1, h2, h3 {
+  margin-bottom: 1rem;
+}
+
+/* Layout */
 header {
-  background-color: #333;
-  color: white;
+  background-color: #4c4c4c;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
+  padding: 1rem 2rem;
+}
+
+header h1 {
+  color: #fff;
 }
 
 header input {
-  padding: 0.5rem;
   font-size: 1rem;
+  padding: 0.5rem;
+  width: 50%;
 }
 
 #movies {
@@ -27,38 +40,48 @@ header input {
   flex-wrap: wrap;
   justify-content: center;
   gap: 1rem;
-  padding: 1rem;
+  padding: 2rem;
 }
 
 .movie {
-  background-color: #f2f2f2;
-  padding: 1rem;
+  background-color: #f5f5f5;
+  padding: 1.5rem;
   border-radius: 5px;
-  width: 200px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 250px;
   text-align: center;
 }
 
 .movie img {
   width: 100%;
   height: auto;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 1rem;
 }
 
 .movie button {
-  background-color: #333;
+  background-color: #4c4c4c;
   color: white;
   border: none;
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   cursor: pointer;
   margin-top: 1rem;
+  border-radius: 3px;
 }
 
 #favorites {
-  background-color: #eee;
-  padding: 1rem;
+  background-color: #f9f9f9;
+  padding: 2rem;
+  margin-top: 2rem;
 }
 
 #favorites-list {
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+#favorites-list li {
+  padding: 0.5rem 0;
 }
