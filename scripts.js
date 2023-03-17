@@ -1,51 +1,36 @@
 // Get references to DOM elements
-const uploadButton = document.querySelector('nav a[href="#upload"]');
-const uploadModal = document.querySelector('#upload-modal');
-const closeModalButton = uploadModal.querySelector('button[type="button"]');
-const uploadForm = uploadModal.querySelector('form');
-const searchForm = document.querySelector('form.search');
-const searchInput = searchForm.querySelector('input[type="search"]');
-const searchResults = document.querySelector('#search-results');
+const browseButton = document.querySelector('nav a[href="#browse"]');
+const collectionsButton = document.querySelector('nav a[href="#collections"]');
+const main = document.querySelector('main');
 
-// Show the upload modal when the "Upload" button is clicked
-uploadButton.addEventListener('click', () => {
-  uploadModal.classList.add('show');
+// Show some sample content when the "Browse" button is clicked
+browseButton.addEventListener('click', () => {
+  const section = document.createElement('section');
+  section.innerHTML = `
+    <h2>Browse Recipes</h2>
+    <ul>
+      <li><a href="#">Appetizers</a></li>
+      <li><a href="#">Main Courses</a></li>
+      <li><a href="#">Desserts</a></li>
+      <li><a href="#">Drinks</a></li>
+    </ul>
+  `;
+  main.innerHTML = '';
+  main.appendChild(section);
 });
 
-// Hide the upload modal when the "Close" button is clicked
-closeModalButton.addEventListener('click', () => {
-  uploadModal.classList.remove('show');
+// Show some sample content when the "Collections" button is clicked
+collectionsButton.addEventListener('click', () => {
+  const section = document.createElement('section');
+  section.innerHTML = `
+    <h2>Collections</h2>
+    <ul>
+      <li><a href="#">Healthy Recipes</a></li>
+      <li><a href="#">Quick and Easy</a></li>
+      <li><a href="#">Family Favorites</a></li>
+      <li><a href="#">Seasonal Specialties</a></li>
+    </ul>
+  `;
+  main.innerHTML = '';
+  main.appendChild(section);
 });
-
-// Submit the upload form when it's submitted
-uploadForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  // TODO: Handle form submission
-  uploadModal.classList.remove('show');
-});
-
-// Perform a search when the search form is submitted
-searchForm.addEventListener('submit', (event) => {
-  event.preventDefault();
-  const searchTerm = searchInput.value;
-  // TODO: Perform search and display results
-});
-
-// Display search results
-function displaySearchResults(results) {
-  searchResults.innerHTML = '';
-  if (results.length === 0) {
-    searchResults.textContent = 'No results found.';
-  } else {
-    const ul = document.createElement('ul');
-    results.forEach((result) => {
-      const li = document.createElement('li');
-      const link = document.createElement('a');
-      link.href = result.url;
-      link.textContent = result.title;
-      li.appendChild(link);
-      ul.appendChild(li);
-    });
-    searchResults.appendChild(ul);
-  }
-}
