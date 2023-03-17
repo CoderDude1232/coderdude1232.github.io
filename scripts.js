@@ -1,63 +1,51 @@
-const movies = [
-  // Add movie objects here with 'title', 'image', and 'id' properties
-  // Example: { title: 'Movie Title', image: 'movie-image.jpg', id: 1 }
-];
+// Get references to DOM elements
+const uploadButton = document.querySelector('nav a[href="#upload"]');
+const uploadModal = document.querySelector('#upload-modal');
+const closeModalButton = uploadModal.querySelector('button[type="button"]');
+const uploadForm = uploadModal.querySelector('form');
+const searchForm = document.querySelector('form.search');
+const searchInput = searchForm.querySelector('input[type="search"]');
+const searchResults = document.querySelector('#search-results');
 
-const search = document.getElementById('search');
-const moviesContainer = document.getElementById('movies');
-const favoritesList = document.getElementById('favorites-list');
-
-function createMovieCard(movie) {
-  const movieCard = document.createElement('div');
-  movieCard.classList.add('movie');
-  movieCard.innerHTML = `
-    <h3>${movie.title}</h3>
-    <img src="${movie.image}" alt="${movie.title}">
-    <button onclick="addToFavorites(${movie.id})">Add to Favorites</button>
-  `;
-  return movieCard;
-}
-
-function displayMovies(filteredMovies) {
-  moviesContainer.innerHTML = '';
-  filteredMovies.forEach((movie) => {
-    const movieCard = createMovieCard(movie);
-    moviesContainer.appendChild(movieCard);
-  });
-}
-
-function filterMovies(query) {
-  return movies.filter((movie) => movie.title.toLowerCase().includes(query.toLowerCase()));
-}
-
-function addToFavorites(movieId) {
-  const movie = movies.find((m) => m.id === movieId);
-  const listItem = document.createElement('li');
-  listItem.textContent = movie.title;
-  favoritesList.appendChild(listItem);
-}
-
-search.addEventListener('input', (e) => {
-  const query = e.target.value;
-  const filteredMovies = filterMovies(query);
-  displayMovies(filteredMovies);
+// Show the upload modal when the "Upload" button is clicked
+uploadButton.addEventListener('click', () => {
+  uploadModal.classList.add('show');
 });
 
-displayMovies(movies);
-// Add this line after the existing event listeners
-document.getElementById('search-button').addEventListener('click', performSearch);
+// Hide the upload modal when the "Close" button is clicked
+closeModalButton.addEventListener('click', () => {
+  uploadModal.classList.remove('show');
+});
 
-// Wrap the existing search functionality in a new function
-function performSearch() {
-  const query = search.value;
-  const filteredMovies = filterMovies(query);
-  displayMovies(filteredMovies);
-}
+// Submit the upload form when it's submitted
+uploadForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  // TODO: Handle form submission
+  uploadModal.classList.remove('show');
+});
 
-// Replace the existing event listener for 'input' with the following
-search.addEventListener('keypress', (e) => {
-  if (e.key === 'Enter') {
-    performSearch();
+// Perform a search when the search form is submitted
+searchForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const searchTerm = searchInput.value;
+  // TODO: Perform search and display results
+});
+
+// Display search results
+function displaySearchResults(results) {
+  searchResults.innerHTML = '';
+  if (results.length === 0) {
+    searchResults.textContent = 'No results found.';
+  } else {
+    const ul = document.createElement('ul');
+    results.forEach((result) => {
+      const li = document.createElement('li');
+      const link = document.createElement('a');
+      link.href = result.url;
+      link.textContent = result.title;
+      li.appendChild(link);
+      ul.appendChild(li);
+    });
+    searchResults.appendChild(ul);
   }
-});
-
+}
