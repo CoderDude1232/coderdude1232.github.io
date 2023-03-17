@@ -34,3 +34,28 @@ collectionsButton.addEventListener('click', () => {
   main.innerHTML = '';
   main.appendChild(section);
 });
+
+// Define a function to create a new recipe element
+function createRecipe() {
+  const featuredRecipes = document.querySelector(".featured-recipes");
+  const newRecipe = document.createElement("li");
+  newRecipe.innerHTML = "<img src='https://via.placeholder.com/300x200' alt='Recipe Image'><h3>New Recipe Title</h3>";
+  featuredRecipes.querySelector("ul").appendChild(newRecipe);
+}
+
+// Define a function to create a new recipe category element
+function createCategory() {
+  const browseRecipes = document.querySelector(".browse-recipes");
+  const newCategory = document.createElement("li");
+  newCategory.innerHTML = "<a href='#'>New Recipe Category</a>";
+  browseRecipes.querySelector("ul").appendChild(newCategory);
+}
+
+// Get references to the button elements
+const button1 = document.getElementById("button1");
+const button2 = document.getElementById("button2");
+
+// Add event listeners to each button
+button1.addEventListener("click", createRecipe);
+button2.addEventListener("click", createCategory);
+
