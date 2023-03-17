@@ -1,58 +1,73 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Recipe Sharing Platform</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>My Recipe Sharing Platform</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Add the following line to link to the CSS file -->
+    <link rel="stylesheet" href="style.css">
   </head>
   <body>
     <header>
-      <h1>Recipe Sharing Platform</h1>
       <nav>
         <ul>
           <li><a href="#">Home</a></li>
-          <li><a href="#">Browse</a></li>
-          <li><a href="#">Collections</a></li>
-          <li><a href="#">Upload</a></li>
+          <li><a href="#">Browse Recipes</a></li>
+          <li><a href="#">Add Recipe</a></li>
         </ul>
       </nav>
+      <h1>My Recipe Sharing Platform</h1>
     </header>
     <main>
       <section class="featured-recipes">
         <h2>Featured Recipes</h2>
         <ul>
           <li>
-            <a href="#">
-              <img src="https://images.unsplash.com/photo-1610496817347-313e647788c2" alt="Pasta dish">
-              <h3>Pasta with Tomato Sauce</h3>
-            </a>
+            <img src="https://via.placeholder.com/300x200" alt="Recipe Image">
+            <h3>Recipe Title</h3>
           </li>
           <li>
-            <a href="#">
-              <img src="https://images.unsplash.com/photo-1599013104139-2c0ed10aee29" alt="Vegetable salad">
-              <h3>Summer Vegetable Salad</h3>
-            </a>
+            <img src="https://via.placeholder.com/300x200" alt="Recipe Image">
+            <h3>Recipe Title</h3>
           </li>
           <li>
-            <a href="#">
-              <img src="https://images.unsplash.com/photo-1595443372762-af01ac36a253" alt="Fruit smoothie">
-              <h3>Berry Banana Smoothie</h3>
-            </a>
+            <img src="https://via.placeholder.com/300x200" alt="Recipe Image">
+            <h3>Recipe Title</h3>
+          </li>
+          <li>
+            <img src="https://via.placeholder.com/300x200" alt="Recipe Image">
+            <h3>Recipe Title</h3>
           </li>
         </ul>
       </section>
       <section class="browse-recipes">
         <h2>Browse Recipes</h2>
         <ul>
-          <li><a href="#">Appetizers</a></li>
-          <li><a href="#">Main Courses</a></li>
+          <li><a href="#">Breakfast</a></li>
+          <li><a href="#">Lunch</a></li>
+          <li><a href="#">Dinner</a></li>
           <li><a href="#">Desserts</a></li>
-          <li><a href="#">Drinks</a></li>
         </ul>
       </section>
+      <!-- Add the following button elements -->
+      <button id="button1">Button 1</button>
+      <button id="button2">Button 2</button>
     </main>
     <footer>
-      <p>&copy; 2023 Recipe Sharing Platform</p>
+      <p>&copy; 2023 My Recipe Sharing Platform. All rights reserved.</p>
     </footer>
-    <script src="app.js"></script>
+    <!-- Add the following script tag to the bottom of the body section -->
+    <script>
+      const button1 = document.getElementById("button1");
+      const button2 = document.getElementById("button2");
+
+      button1.addEventListener("click", function() {
+        alert("Button 1 clicked");
+      });
+
+      button2.addEventListener("click", function() {
+        alert("Button 2 clicked");
+      });
+    </script>
   </body>
 </html>
